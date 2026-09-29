@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sip Smart – Water Bottle Guide</title>
+  <meta name="description" content="Compare glass, plastic, stainless steel and rubber water bottles and find the right one for you.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Sip Smart home">
+      <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2h6v3l1.5 2.5V21a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V7.5L9 5z" fill="currentColor"/></svg>
+      Sip Smart
+    </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav">
+      <a href="#types">Bottle types</a>
+      <a href="#finder">Find my bottle</a>
+      <a href="#picks">Top picks</a>
+      <a href="#compare">Compare</a>
+      <a href="#care">Care tips</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>The right bottle makes drinking water easy.</h1>
+        <p class="lead">Glass, plastic, stainless steel or rubber? Learn how each one works, what it's good at, and which one suits how you live.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#finder">Find my bottle</a>
+          <a class="btn ghost" href="#types">Browse the four types</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <div class="hero-img">
+          <img src="images/hero.jpg" alt="A matte teal water bottle on a desk with books and glasses" loading="eager" data-fallback="hero">
+        </div>
+        <div class="hero-badge"><strong>4</strong> bottle types explained</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="section" id="types">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Four types of bottle. One that fits you.</h2>
+        <p>Tap a type to see what it does best and where it falls short.</p>
+      </div>
+
+      <div class="tabs" role="tablist" aria-label="Bottle types" id="typeTabs"></div>
+      <div class="type-panel" id="typePanel" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- FINDER -->
+  <section class="section finder" id="finder">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Not sure which to pick? Answer three questions.</h2>
+        <p>We'll recommend the bottle type that matches your day.</p>
+      </div>
+
+      <form class="quiz" id="quiz" novalidate>
+        <fieldset>
+          <legend>Where will you use it most?</legend>
+          <label><input type="radio" name="use" value="gym"><span>Gym or sports</span></label>
+          <label><input type="radio" name="use" value="office"><span>Office or desk</span></label>
+          <label><input type="radio" name="use" value="travel"><span>Travel or hiking</span></label>
+          <label><input type="radio" name="use" value="school"><span>School or kids</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>What will you drink?</legend>
+          <label><input type="radio" name="temp" value="cold"><span>Cold water</span></label>
+          <label><input type="radio" name="temp" value="hot"><span>Hot drinks</span></label>
+          <label><input type="radio" name="temp" value="room"><span>Room temperature</span></label>
+        </fieldset>
+        <fieldset>
+          <legend>What matters most?</legend>
+          <label><input type="radio" name="priority" value="taste"><span>Pure taste</span></label>
+          <label><input type="radio" name="priority" value="tough"><span>Toughness</span></label>
+          <label><input type="radio" name="priority" value="light"><span>Light to carry</span></label>
+          <label><input type="radio" name="priority" value="budget"><span>Low price</span></label>
+        </fieldset>
+        <button class="btn primary" type="submit">Show my match</button>
+        <p class="form-error" id="quizError" role="alert" hidden>Please answer all three questions.</p>
+      </form>
+
+      <div class="result" id="result" hidden aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- PICKS -->
+  <section class="section" id="picks">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Recommended bottles</h2>
+        <p>Two picks in each type, chosen for different needs.</p>
+      </div>
+      <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+      <div class="grid" id="picksGrid"></div>
+    </div>
+  </section>
+
+  <!-- COMPARE -->
+  <section class="section alt" id="compare">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Side-by-side comparison</h2>
+        <p>Ratings are out of 5 and describe typical bottles of each type.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="compare" id="compareTable"></table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARE -->
+  <section class="section" id="care">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Keep your bottle clean and fresh</h2>
+        <p>A few habits make any bottle last longer and taste better.</p>
+      </div>
+      <div class="care-grid">
+        <article><h3>Wash daily</h3><p>Rinse after each use and wash with warm soapy water. A bottle brush reaches the bottom and the neck.</p></article>
+        <article><h3>Dry fully</h3><p>Let the bottle air-dry upside down with the lid off. Trapped moisture is what causes smells.</p></article>
+        <article><h3>Deep clean weekly</h3><p>Soak in a mix of warm water and white vinegar or baking soda, then rinse well.</p></article>
+        <article><h3>Check the lid</h3><p>Seals and straws collect residue. Take them apart and clean them, and replace worn gaskets.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section alt" id="faq">
+    <div class="wrap narrow">
+      <div class="section-head">
+        <h2>Common questions</h2>
+      </div>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p><strong>Sip Smart</strong> – an information guide for people choosing a water bottle.</p>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
